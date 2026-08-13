@@ -80,7 +80,7 @@ def get_dataloader(img_dir, batch_size=4, img_size=256, sigma="sigma_25", shuffl
             transforms.ToTensor()])
 
     if is_train and "real_noise" not in sigma:
-        cb_p = 0.2
+        cb_p = 0.3
     else:
         cb_p = 0
     dataset = DenoiseDataset(img_dir=img_dir, img_size=img_size, sigma=sigma, 
