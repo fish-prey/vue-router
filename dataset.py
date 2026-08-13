@@ -84,6 +84,6 @@ def get_dataloader(img_dir, batch_size=4, img_size=256, sigma="sigma_25", shuffl
     else:
         cb_p = 0
     dataset = DenoiseDataset(img_dir=img_dir, img_size=img_size, sigma=sigma, 
-                             transform=transform, cutblur_prob=0)
+                             transform=transform, cutblur_prob=cb_p)
     return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
     #return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=8, pin_memory=True, persistent_workers=True)
